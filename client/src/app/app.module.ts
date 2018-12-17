@@ -34,15 +34,18 @@ import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 
+import {FlexLayoutModule} from '@angular/flex-layout';
 import { Routes, RouterModule } from '@angular/router';
 
 
 import { AppComponent } from './app.component';
 import { AddRestaurantsComponent } from './add-restaurants/add-restaurants.component';
+import { FormsModule } from '@angular/forms';
 
 
 const appRoutes : Routes = [
-  { path: "" , component : AppComponent }
+  { path: "" , component : AddRestaurantsComponent },
+  { path: "add-restaurants" , component : AddRestaurantsComponent }
 ]
 
 @NgModule({
@@ -53,6 +56,8 @@ const appRoutes : Routes = [
   imports: [
     RouterModule.forRoot(appRoutes),
     BrowserModule,
+    FormsModule,
+    FlexLayoutModule,
     BrowserAnimationsModule,
     MatCheckboxModule,
     MatCheckboxModule,

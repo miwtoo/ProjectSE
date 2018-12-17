@@ -1,3 +1,126 @@
-<p>
-  add-restaurants works!
-</p>
+<div class="flex-container">
+  <div></div>
+  <div>
+    <h1>เพิ่มร้าน {{storeName}}</h1>
+    <h4>การกรอกข้อมูลให้ละเอียดและถูกต้องจะทำให้ผู้ใช้งานเว็บคนอื่นๆหาร้านของคุณเจอได้ง่ายขึ้น</h4>
+
+    <form #addRes="ngForm" (ngSubmit)="onSubmit">
+      <h4>ข้อมูลพื้นฐาน</h4>
+      <mat-card>
+        <mat-form-field>
+          <input matInput placeholder="ชื่อร้าน">
+        </mat-form-field><br>
+        <mat-form-field>
+          <input matInput placeholder="สาขา">
+        </mat-form-field><br>
+        <mat-form-field>
+          <mat-select placeholder="ประเภท">
+            <mat-option *ngFor="let food of foods" [value]="food.value">
+              {{food.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field><br>
+        <mat-form-field>
+          <mat-select placeholder="ประเภท">
+            <mat-option *ngFor="let food of foods" [value]="food.value">
+              {{food.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field><br>
+        <mat-form-field>
+          <mat-select placeholder="ประเภท">
+            <mat-option *ngFor="let food of foods" [value]="food.value">
+              {{food.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field><br>
+        <mat-form-field>
+          <mat-select placeholder="ช่วงราคา">
+            <mat-option *ngFor="let food of priceRanges" [value]="food.value">
+              {{food.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field><br>
+      </mat-card>
+
+      <h4>ที่อยู่</h4>
+      <mat-card>
+        <mat-form-field>
+          <input matInput placeholder="ที่อยู่">
+        </mat-form-field><br>
+        <mat-form-field>
+          <input matInput placeholder="เส้นทาง">
+        </mat-form-field><br>
+        <mat-form-field>
+          <input matInput placeholder="จังหวัด">
+        </mat-form-field><br>
+        <mat-form-field>
+          <input matInput placeholder="เขต/อำเภอ">
+        </mat-form-field><br>
+        <mat-form-field>
+          <input matInput placeholder="แขวง/ตำบล">
+        </mat-form-field><br>
+        <mat-form-field>
+          <input matInput placeholder="อาคารสถานที่">
+        </mat-form-field><br>
+      </mat-card>
+
+      <h4>ข้อมูลติดต่อ</h4>
+      <mat-card>
+        <mat-form-field>
+          <input matInput placeholder="เบอร์ติดต่อ">
+        </mat-form-field><br>
+        <mat-form-field>
+          <input matInput placeholder="อีเมล์">
+        </mat-form-field><br>
+        <mat-form-field>
+          <input matInput placeholder="Website">
+        </mat-form-field><br>
+      </mat-card>
+
+      <h4>ข้อมูลเพิ่มเติม</h4>
+      <mat-card>
+        <h4>เวลาเปิดให้บริการ</h4>
+        <mat-form-field>
+          <mat-select placeholder="วัน">
+            <mat-option *ngFor="let food of foods" [value]="food.value">
+              {{food.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field><br>
+        <mat-form-field>
+          <mat-select placeholder="เวลาเปิด">
+            <mat-option *ngFor="let food of foods" [value]="food.value">
+              {{food.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field><br>
+        <mat-form-field>
+          <mat-select placeholder="เวลาปิด">
+            <mat-option *ngFor="let food of priceRanges" [value]="food.value">
+              {{food.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-raised-button color="warn">เพิ่ม</button><br><br>
+        <mat-form-field>
+          <mat-select placeholder="จำนวนที่นั้ง">
+            <mat-option *ngFor="let food of priceRanges" [value]="food.value">
+              {{food.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field><br>
+      </mat-card>
+
+      <h4>รูปภาพ</h4>
+      <mat-card>
+        เลือกรูปภาพร้าน : <button md-raised-button color="primary" (click)="fileInput.click()">Upload</button>
+        <input hidden type="file" #fileInput>
+      </mat-card>
+      <br><br>
+      <button type="submit" mat-raised-button color="warn">บันทึก</button><br><br>
+
+    </form>
+  </div>
+  <div></div>
+</div>
